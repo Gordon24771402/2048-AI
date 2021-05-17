@@ -27,6 +27,14 @@ class MyTestCase(unittest.TestCase):
         expected = 16
         self.assertEqual(actual, expected)
 
+    def test_check_state(self):
+        # test_check_state-01
+        actualMat = logic.add(np.array([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]))
+        actual = logic.check_state(actualMat)
+        expected = "CONTINUE"
+        self.assertEqual(actual, expected)
+
+
 
 if __name__ == '__main__':
     unittest.main()
