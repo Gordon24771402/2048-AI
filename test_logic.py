@@ -105,6 +105,14 @@ class MyTestCase(unittest.TestCase):
         actual = logic.check_state(actualMat)
         expected = "CONTINUE"
         self.assertEqual(actual, expected)
+        # test_check_state-08 (actualMat[1][3] merges with actualMat[2][3])
+        actualMat = np.array([[2, 4, 2, 4],
+                              [4, 2, 4, 2],
+                              [8, 32, 8, 2],
+                              [16, 4, 2, 8]])
+        actual = logic.check_state(actualMat)
+        expected = "CONTINUE"
+        self.assertEqual(actual, expected)
 
 
 if __name__ == '__main__':
