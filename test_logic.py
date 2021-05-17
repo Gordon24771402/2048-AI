@@ -64,7 +64,6 @@ class MyTestCase(unittest.TestCase):
         actual = logic.check_state(actualMat)
         expected = "WON"
         self.assertEqual(actual, expected)
-
         # test_check_state-04 (actualMat[1][1] merges with actualMat[1][2])
         actualMat = np.array([[2, 8, 2, 4],
                               [32, 4, 4, 2],
@@ -113,7 +112,7 @@ class MyTestCase(unittest.TestCase):
         actual = logic.check_state(actualMat)
         expected = "CONTINUE"
         self.assertEqual(actual, expected)
-        # test_check_state-09 (none zero + none merge)
+        # test_check_state-09 (actualMat[1][0] merges with actualMat[2][0])
         actualMat = np.array([[2, 4, 2, 4],
                               [8, 2, 4, 2],
                               [8, 32, 8, 16],
