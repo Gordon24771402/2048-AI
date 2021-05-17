@@ -22,3 +22,19 @@ def add(mat):
     mat[r][c] = random.choice([2, 4])
     return mat
 
+
+# function to check current state of 2048 (CONTINUE, WON, LOSE)
+def check_state(mat):
+    # if 2048 is achieved, return WON
+    if 2048 in mat:
+        return "WON"
+    # if at least one empty cell, return CONTINUE
+    if 0 in mat:
+        return "CONTINUE"
+    # if any two cells could get merged and create an empty cell, return CONTINUE
+    for i in range(3):
+        for j in range(3):
+            if mat[i][j] == mat[i + 1][j] or mat[i][j] == mat[i][j + 1]:
+                return "CONTINUE"
+    # else, return LOSE
+    return "LOSE"
