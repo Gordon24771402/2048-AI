@@ -65,6 +65,23 @@ class MyTestCase(unittest.TestCase):
         expected = "WON"
         self.assertEqual(actual, expected)
 
+        # test_check_state-04
+        actualMat = np.array([[2, 4, 2, 4],
+                              [4, 4, 4, 2],
+                              [8, 32, 8, 16],
+                              [16, 8, 2, 8]])
+        actual = logic.check_state(actualMat)
+        expected = "CONTINUE"
+        self.assertEqual(actual, expected)
+        # test_check_state-05
+        actualMat = np.array([[2, 4, 2, 4],
+                              [4, 2, 8, 2],
+                              [8, 32, 8, 16],
+                              [16, 8, 2, 8]])
+        actual = logic.check_state(actualMat)
+        expected = "CONTINUE"
+        self.assertEqual(actual, expected)
+
 
 if __name__ == '__main__':
     unittest.main()
