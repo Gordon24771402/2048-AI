@@ -36,12 +36,12 @@ def check_state(mat):
         for j in range(3):
             if mat[i][j] == mat[i + 1][j] or mat[i][j] == mat[i][j + 1]:
                 return "CONTINUE"
+    # check merge in edge cases
     for j in range(3):
-        # check edge cases
         if mat[3][j] == mat[3][j + 1]:
             return "CONTINUE"
+    # check merge in edge cases
     for i in range(3):
-        # check edge cases
         if mat[i][3] == mat[i + 1][3]:
             return "CONTINUE"
     # else, return LOSE
