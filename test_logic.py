@@ -121,6 +121,31 @@ class MyTestCase(unittest.TestCase):
         expected = "CONTINUE"
         self.assertEqual(actual, expected)
 
+    def test_left(self):
+        # test_left-01
+        actualMat = np.array([[0, 0, 0, 0],
+                              [0, 0, 0, 0],
+                              [0, 0, 0, 0],
+                              [0, 0, 0, 0]])
+        actual = logic.left(actualMat)
+        expected = np.array([[0, 0, 0, 0],
+                             [0, 0, 0, 0],
+                             [0, 0, 0, 0],
+                             [0, 0, 0, 0]])
+        self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
+        # test_left-02
+        actualMat = np.array([[1, 0, 0, 0],
+                              [2, 0, 0, 0],
+                              [3, 0, 0, 0],
+                              [4, 0, 0, 0]])
+        actual = logic.left(actualMat)
+        expected = np.array([[1, 0, 0, 0],
+                             [2, 0, 0, 0],
+                             [3, 0, 0, 0],
+                             [4, 0, 0, 0]])
+        self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
+
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -46,3 +46,16 @@ def check_state(mat):
             return "CONTINUE"
     # else, return LOSE
     return "LOSE"
+
+
+# function to update matrix with left-move
+def left(mat):
+    # compress
+    for i in range(4):
+        # remove empty cells in-between
+        matSim = np.delete(mat[i], np.where(mat[i] == 0))
+        # add removed cells to the right
+        matSim.resize(4)
+        # replace with compressed matrix
+        mat[i] = matSim
+    return mat
