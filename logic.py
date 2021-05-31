@@ -62,12 +62,21 @@ def horCompress(mat):
 
 # function to merge matrix horizontally (left)
 def horMerge(mat):
-
-
+    for i in range(3):
+        for j in range(3):
+            if mat[i][j] == mat[i][j + 1]:
+                mat[i][j] = mat[i][j] + mat[i][j + 1]
+                mat[i][j + 1] = 0
+    for j in range(3):
+        if mat[3][j] == mat[3][j + 1]:
+            mat[3][j] = mat[3][j] + mat[3][j + 1]
+            mat[3][j + 1] = 0
+    return mat
 
 
 # function to update matrix with left-move
 def left(mat):
     mat = horCompress(mat)
+    mat = horMerge(mat)
     mat = horCompress(mat)
     return mat

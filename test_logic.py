@@ -123,60 +123,28 @@ class MyTestCase(unittest.TestCase):
 
     def test_left(self):
         # test_left-01
-        actualMat = np.array([[0, 0, 0, 0],
-                              [0, 0, 0, 0],
-                              [0, 0, 0, 0],
-                              [0, 0, 0, 0]])
+        actualMat = np.array([[0, 2, 0, 2],
+                              [2, 0, 2, 0],
+                              [0, 0, 0, 2],
+                              [2, 0, 0, 0]])
         actual = logic.left(actualMat)
-        expected = np.array([[0, 0, 0, 0],
-                             [0, 0, 0, 0],
-                             [0, 0, 0, 0],
-                             [0, 0, 0, 0]])
-        self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
-        # test_left-02
-        actualMat = np.array([[2, 0, 0, 0],
-                              [4, 0, 0, 0],
-                              [8, 0, 0, 0],
-                              [16, 0, 0, 0]])
-        actual = logic.left(actualMat)
-        expected = np.array([[2, 0, 0, 0],
+        expected = np.array([[4, 0, 0, 0],
                              [4, 0, 0, 0],
-                             [8, 0, 0, 0],
-                             [16, 0, 0, 0]])
-        self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
-        # test_left-03
-        actualMat = np.array([[0, 0, 0, 16],
-                              [0, 0, 0, 8],
-                              [0, 0, 0, 4],
-                              [0, 0, 0, 2]])
-        actual = logic.left(actualMat)
-        expected = np.array([[16, 0, 0, 0],
-                             [8, 0, 0, 0],
-                             [4, 0, 0, 0],
+                             [2, 0, 0, 0],
                              [2, 0, 0, 0]])
         self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
-        # test_left-04
-        actualMat = np.array([[2, 4, 8, 16],
-                              [2, 4, 8, 16],
-                              [2, 4, 8, 16],
-                              [2, 4, 8, 16]])
+        # test_left-02
+        actualMat = np.array([[0, 2, 0, 2],
+                              [2, 0, 2, 0],
+                              [0, 0, 0, 2],
+                              [2, 0, 0, 0]])
         actual = logic.left(actualMat)
-        expected = np.array([[2, 4, 8, 16],
-                             [2, 4, 8, 16],
-                             [2, 4, 8, 16],
-                             [2, 4, 8, 16]])
+        expected = np.array([[4, 0, 0, 0],
+                             [4, 0, 0, 0],
+                             [2, 0, 0, 0],
+                             [2, 0, 0, 0]])
         self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
-        # test_left-05
-        actualMat = np.array([[2, 4, 8, 0],
-                              [2, 4, 0, 16],
-                              [0, 4, 0, 16],
-                              [2, 0, 8, 16]])
-        actual = logic.left(actualMat)
-        expected = np.array([[2, 4, 8, 0],
-                             [2, 4, 16, 0],
-                             [4, 16, 0, 0],
-                             [2, 8, 16, 0]])
-        self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
+
 
 
 if __name__ == '__main__':
