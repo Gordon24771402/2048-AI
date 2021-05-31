@@ -48,9 +48,8 @@ def check_state(mat):
     return "LOSE"
 
 
-# function to update matrix with left-move
-def left(mat):
-    # compress
+# function to compress matrix horizontally (left)
+def horCompress(mat):
     for i in range(4):
         # remove empty cells in-between
         matSim = np.delete(mat[i], np.where(mat[i] == 0))
@@ -58,4 +57,17 @@ def left(mat):
         matSim.resize(4)
         # replace with compressed matrix
         mat[i] = matSim
+    return mat
+
+
+# function to merge matrix horizontally (left)
+def horMerge(mat):
+
+
+
+
+# function to update matrix with left-move
+def left(mat):
+    mat = horCompress(mat)
+    mat = horCompress(mat)
     return mat
