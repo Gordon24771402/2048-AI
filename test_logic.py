@@ -155,6 +155,18 @@ class MyTestCase(unittest.TestCase):
                              [2, 0, 0, 0],
                              [2, 0, 0, 0]])
         self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
+        # test_left-04
+        actualMat = np.array([[2, 2, 2, 2],
+                              [0, 0, 0, 2],
+                              [2, 0, 0, 2],
+                              [0, 0, 0, 0]])
+        actual = logic.left(actualMat)
+        expected = np.array([[4, 4, 0, 0],
+                             [2, 0, 0, 0],
+                             [4, 0, 0, 0],
+                             [0, 0, 0, 0]])
+        self.assertEqual(np.testing.assert_array_equal(actual, expected), None)
+
 
 
 
